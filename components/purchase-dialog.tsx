@@ -1,6 +1,8 @@
 "use client"
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
+
+import React, { useState } from "react"
+
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -9,45 +11,63 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
-interface PurchaseDialogProps {
-  amount: number;
-}
+export function PurchaseDialog() {
+  const [modal, setModal] = useState<"none" | "claim" | "rickroll">("none")
 
-export function PurchaseDialog({ amount }: PurchaseDialogProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClose = () => {
-    setIsOpen(false);
-  }
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Handle the submission logic here
-    handleClose();
+  const handleClaimSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setModal("rickroll")
   }
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild>
-        <Button className="w-full" onClick={() => setIsOpen(true)}>Claim Now</Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+    <div className="w-full">
+      {modal === "claim" && (
+        <ClaimModal
+          onOpenChange={() => setModal("none")}
+          onSubmit={handleClaimSubmit}
+        />
+      )}
+      {modal === "rickroll" && (
+        <RickRollModal onOpenChange={() => setModal("none")} />
+      )}
+      <Button onClick={() => setModal("claim")} className="w-full">
+        Claim Now
+      </Button>
+    </div>
+  )
+}
+
+interface ModalProps {
+  onOpenChange: () => void
+}
+
+function ClaimModal({
+  onOpenChange,
+  onSubmit,
+}: ModalProps & { onSubmit: (e: React.FormEvent<HTMLFormElement>) => void }) {
+  return (
+    <Dialog open={true} onOpenChange={onOpenChange}>
+      <DialogContent>
         <DialogHeader>
           <DialogTitle>Confirm Claim</DialogTitle>
           <DialogDescription>
-            Enter your Roblox Username to claim {amount} Robux.
+            Enter your Roblox Username to claim Robux.
           </DialogDescription>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
+        <form onSubmit={onSubmit}>
+          <div className="mb-4 gap-4">
             <Label htmlFor="username" className="text-right">
               Username
             </Label>
-            <Input id="username" placeholder="Enter your username" className="col-span-3" />
+            <Input
+              id="username"
+              placeholder="Enter your username"
+              className="col-span-3"
+            />
           </div>
           <DialogFooter>
             <Button type="submit">Confirm</Button>
@@ -55,5 +75,21 @@ export function PurchaseDialog({ amount }: PurchaseDialogProps) {
         </form>
       </DialogContent>
     </Dialog>
-  );
+  )
+}
+
+function RickRollModal({ onOpenChange }: ModalProps) {
+  return (
+    <Dialog open={true} onOpenChange={onOpenChange}>
+      <DialogContent className="m-0 max-h-screen max-w-screen-2xl overflow-y-scroll p-0">
+        <iframe
+          className="h-screen w-full"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&loop=1"
+          title="RickRoll"
+          frameBorder="0"
+          allowFullScreen
+        ></iframe>
+      </DialogContent>
+    </Dialog>
+  )
 }
