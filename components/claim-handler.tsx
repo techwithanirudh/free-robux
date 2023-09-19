@@ -15,7 +15,11 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export function PurchaseDialog() {
+interface ClaimHandlerProps {
+  amount: number
+}
+
+export function ClaimHandler({ amount }: ClaimHandlerProps) {
   const [modal, setModal] = useState<"none" | "claim" | "rickroll">("none")
 
   const handleClaimSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -29,6 +33,7 @@ export function PurchaseDialog() {
         <ClaimModal
           onOpenChange={() => setModal("none")}
           onSubmit={handleClaimSubmit}
+          amount={amount}
         />
       )}
       {modal === "rickroll" && (
@@ -48,6 +53,7 @@ interface ModalProps {
 function ClaimModal({
   onOpenChange,
   onSubmit,
+  amount,
 }: ModalProps & { onSubmit: (e: React.FormEvent<HTMLFormElement>) => void }) {
   return (
     <Dialog open={true} onOpenChange={onOpenChange}>
@@ -55,7 +61,7 @@ function ClaimModal({
         <DialogHeader>
           <DialogTitle>Confirm Claim</DialogTitle>
           <DialogDescription>
-            Enter your Roblox Username to claim Robux.
+            Enter your Roblox Username to claim {amount} Robux.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={onSubmit}>

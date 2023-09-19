@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { PurchaseDialog } from "./purchase-dialog";
+import { ClaimHandler } from "./claim-handler";
 
 interface RobuxCardProps {
   amount: number;
@@ -20,7 +20,7 @@ export function RobuxCard({ amount, description }: RobuxCardProps) {
         {/* Content can be added here if needed */}
       </CardContent>
       <CardFooter className="flex justify-between">
-        <PurchaseDialog amount={amount} />
+        <ClaimHandler amount={amount} />
       </CardFooter>
     </Card>
   );
