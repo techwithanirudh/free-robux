@@ -54,7 +54,7 @@ function ClaimModal({
   onOpenChange,
   onSubmit,
   amount,
-}: ModalProps & { onSubmit: (e: React.FormEvent<HTMLFormElement>) => void }) {
+}: ModalProps & { onSubmit: (e: React.FormEvent<HTMLFormElement>) => void, amount: number }) {
   return (
     <Dialog open={true} onOpenChange={onOpenChange}>
       <DialogContent>
