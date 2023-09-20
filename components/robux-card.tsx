@@ -9,7 +9,7 @@ interface RobuxCardProps {
 
 export function RobuxCard({ amount, description }: RobuxCardProps) {
   return (
-    <Card className="w-full md:w-[350px]">
+    <Card className="mx-auto w-full max-w-[350px]">
       <CardHeader>
         <CardTitle>Buy {amount} Robux</CardTitle>
         <CardDescription>
