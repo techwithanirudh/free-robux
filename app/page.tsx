@@ -31,7 +31,7 @@ export default function IndexPage() {
           </Link>
         </div>
       </section>
-      <section className="container mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <section className="container mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" id="main">
         <RobuxCard amount={400} description="A starter pack for new users." />
         <RobuxCard amount={800} description="Perfect for regular players." />
         <RobuxCard
