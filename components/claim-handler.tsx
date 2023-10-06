@@ -112,7 +112,7 @@ function RickRollModal({ onOpenChange }: ModalProps) {
                   fill="currentFill"
                 />
               </svg>
-              <span class="sr-only">Loading...</span>
+              <span className="sr-only">Loading...</span>
             </div>
             Adding Robux...
           </div>
