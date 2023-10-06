@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState } from "react"
-import ReactPlayer from "react-player/lazy"
 
 import { Button } from "@/components/ui/button"
 import {
