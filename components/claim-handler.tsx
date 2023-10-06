@@ -15,6 +15,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
+import ReactPlayer from 'react-player/lazy';
+
 interface ClaimHandlerProps {
   amount: number
 }
@@ -88,13 +90,10 @@ function RickRollModal({ onOpenChange }: ModalProps) {
   return (
     <Dialog open={true} onOpenChange={onOpenChange}>
       <DialogContent className="m-0 max-h-screen max-w-screen-2xl overflow-y-scroll p-0">
-        <iframe
+        <ReactPlayer 
           className="h-screen w-full"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&loop=1"
-          title="RickRoll"
-          frameBorder="0"
-          allowFullScreen
-        ></iframe>
+          src="rickroll.mp4"
+        />
       </DialogContent>
     </Dialog>
   )
