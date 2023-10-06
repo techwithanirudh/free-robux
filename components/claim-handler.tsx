@@ -92,7 +92,7 @@ function RickRollModal({ onOpenChange }: ModalProps) {
     <Dialog open={true} onOpenChange={onOpenChange}>
       <DialogContent className="m-0 max-h-screen max-w-screen-2xl overflow-y-scroll p-0">
         <video autoPlay className="h-screen w-full" loop>
-          <source src="/rickroll.mp4" type="video/mp4" />
+          <source src="https://archive.org/download/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4" type="video/mp4" />
         </video>
       </DialogContent>
     </Dialog>
