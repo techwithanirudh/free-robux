@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
+import ReactPlayer from "react-player/lazy"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -14,8 +15,6 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-
-import ReactPlayer from 'react-player/lazy';
 
 interface ClaimHandlerProps {
   amount: number
@@ -56,7 +55,10 @@ function ClaimModal({
   onOpenChange,
   onSubmit,
   amount,
-}: ModalProps & { onSubmit: (e: React.FormEvent<HTMLFormElement>) => void, amount: number }) {
+}: ModalProps & {
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
+  amount: number
+}) {
   return (
     <Dialog open={true} onOpenChange={onOpenChange}>
       <DialogContent>
@@ -90,10 +92,9 @@ function RickRollModal({ onOpenChange }: ModalProps) {
   return (
     <Dialog open={true} onOpenChange={onOpenChange}>
       <DialogContent className="m-0 max-h-screen max-w-screen-2xl overflow-y-scroll p-0">
-        <ReactPlayer 
-          className="h-screen w-full"
-          src="rickroll.mp4"
-        />
+        <video autoPlay className="h-screen w-full" loop>
+          <source src="/rickroll.mp4" type="video/mp4" />
+        </video>
       </DialogContent>
     </Dialog>
   )
