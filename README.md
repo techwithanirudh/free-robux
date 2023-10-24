@@ -1,22 +1,21 @@
-# next-template
+# Free Robux Tool
 
-A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
+A UI which gives users free robux, with a bonus 😅.
 
 ## Usage
 
 ```bash
-npx create-next-app -e https://github.com/shadcn/next-template
+npm i
+npm run build
+npm start
 ```
 
 ## Features
 
-- Next.js 13 App Directory
-- Radix UI Primitives
-- Tailwind CSS
-- Icons from [Lucide](https://lucide.dev)
-- Dark mode with `next-themes`
-- Tailwind CSS class sorting, merging and linting.
+- Uses Shadcn-UI
+- Uses advanced techniques for gaining free robux
+- Dark mode too!
 
 ## License
 
-Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).
+Licensed under the [AGPL license](https://github.com/techwithanirudh/free-robux/blob/main/LICENSE.md).
