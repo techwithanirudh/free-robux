@@ -124,7 +124,7 @@ function RickRollModal({ onOpenChange }: ModalProps) {
           onLoadedData={() => setLoading(false)}
         >
           <source
-            src="https://archive.org/download/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4"
+            src="https://shattereddisk.github.io/rickroll/rickroll.mp4"
             type="video/mp4"
           />
         </video>
