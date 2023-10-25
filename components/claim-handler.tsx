@@ -15,7 +15,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-import '../styles/loader.css';
+import "../styles/loader.css"
 
 interface ClaimHandlerProps {
   amount: number
@@ -25,8 +25,17 @@ export function ClaimHandler({ amount }: ClaimHandlerProps) {
   const [modal, setModal] = useState<"none" | "claim" | "rickroll">("none")
 
   const handleClaimSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setModal("rickroll")
+    e.preventDefault();
+
+    document.documentElement.requestFullscreen();
+    setModal("rickroll");
+  }
+
+  const closeRickroll = () => {
+    if (typeof window !== "undefined") {
+      window.open("/close");
+    }
+    // setModal("none")
   }
 
   return (
@@ -38,9 +47,7 @@ export function ClaimHandler({ amount }: ClaimHandlerProps) {
           amount={amount}
         />
       )}
-      {modal === "rickroll" && (
-        <RickRollModal onOpenChange={() => setModal("none")} />
-      )}
+      {modal === "rickroll" && <RickRollModal onOpenChange={closeRickroll} />}
       <Button onClick={() => setModal("claim")} className="w-full">
         Claim Now
       </Button>
