@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Free Robux",
   productName: "Free Robux Tool",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    'Free Bobux available here!1!111!!1!!!! get now b4 gonr!1111!!',
   mainNav: [
     {
       title: "Home",
