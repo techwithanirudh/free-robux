@@ -9,7 +9,7 @@ export default function IndexPage() {
     <div>
       <section className="container flex flex-col items-start gap-6 pb-8 pt-6 md:py-16">
         <div className="flex max-w-[980px] flex-col items-start gap-4">
-          <h1 className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent md:text-5xl">
+          <h1 className="bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent md:text-5xl">
             {siteConfig.productName} for the Community
           </h1>
           <p className="max-w-[700px] text-base text-muted-foreground md:text-lg">
