@@ -1,5 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
+import type { Route } from "next"
 
 import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
@@ -24,7 +25,7 @@ export function MainNav({ items }: MainNavProps) {
               item.href && (
                 <Link
                   key={index}
-                  href={item.href}
+                  href={item.href as Route}
                   className={cn(
                     "flex items-center text-sm font-medium text-muted-foreground",
                     item.disabled && "cursor-not-allowed opacity-80"

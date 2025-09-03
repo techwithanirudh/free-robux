@@ -7,14 +7,14 @@ import { RobuxCard } from "@/components/robux-card"
 export default function IndexPage() {
   return (
     <div>
-      <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-        <div className="flex max-w-[980px] flex-col items-start gap-2">
-          <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
+      <section className="container grid items-center gap-8 pb-12 pt-10 md:py-16">
+        <div className="flex max-w-[980px] flex-col items-start gap-4">
+          <h1 className="bg-gradient-to-b from-foreground to-muted-foreground/70 bg-clip-text text-3xl font-extrabold leading-tight tracking-tight text-transparent md:text-5xl">
             {siteConfig.productName} for the Community{" "}
             <br className="hidden sm:inline" />
             Empowering players, one Robux at a time.
           </h1>
-          <p className="max-w-[700px] text-lg text-muted-foreground">
+          <p className="max-w-[720px] text-base text-muted-foreground md:text-lg">
             Our mission is to provide a platform where generous users can donate
             Robux to those who can&rsquo;t afford them. This tool is built with
             the aim of bringing joy and opportunities to players worldwide.
@@ -22,16 +22,16 @@ export default function IndexPage() {
             and community.
           </p>
         </div>
-        <div className="flex gap-4">
-          <Link href="/about" className={buttonVariants()}>
+        <div className="flex gap-3">
+          <Link href="/about" className={buttonVariants({ size: "lg" })}>
             About Us
           </Link>
-          <Link href="#main" className={buttonVariants({ variant: "outline" })}>
+          <Link href="#main" className={buttonVariants({ variant: "outline", size: "lg" })}>
             Get Started
           </Link>
         </div>
       </section>
-      <section className="container mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" id="main">
+      <section className="container mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" id="main">
         <RobuxCard amount={400} description="A starter pack for new users." />
         <RobuxCard amount={800} description="Perfect for regular players." />
         <RobuxCard
