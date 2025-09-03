@@ -101,7 +101,7 @@ function RickRollModal({ onOpenChange }: ModalProps) {
 
   return (
     <Dialog open={true} onOpenChange={onOpenChange}>
-      <DialogContent className="m-0 max-h-screen max-w-screen-2xl overflow-y-scroll p-0">
+      <DialogContent className="m-0 max-h-screen max-w-(--breakpoint-2xl) overflow-y-scroll p-0">
         {loading && (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
             <div id="floatingCirclesG">

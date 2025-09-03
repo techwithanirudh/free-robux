@@ -7,26 +7,20 @@ import { RobuxCard } from "@/components/robux-card"
 export default function IndexPage() {
   return (
     <div>
-      <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-        <div className="flex max-w-[980px] flex-col items-start gap-2">
-          <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-            {siteConfig.productName} for the Community{" "}
-            <br className="hidden sm:inline" />
-            Empowering players, one Robux at a time.
+      <section className="container flex flex-col items-start gap-6 pb-8 pt-6 md:py-16">
+        <div className="flex max-w-[980px] flex-col items-start gap-4">
+          <h1 className="bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent md:text-5xl">
+            {siteConfig.productName} for the Community
           </h1>
-          <p className="max-w-[700px] text-lg text-muted-foreground">
-            Our mission is to provide a platform where generous users can donate
-            Robux to those who can&rsquo;t afford them. This tool is built with
-            the aim of bringing joy and opportunities to players worldwide.
-            Remember, it&rsquo;s not about the Robux, but the spirit of giving
-            and community.
+          <p className="max-w-[700px] text-base text-muted-foreground md:text-lg">
+            Our mission is to provide a platform where generous users can donate Robux to those who can&rsquo;t afford them. This tool is built with the aim of bringing joy and opportunities to players worldwide. Remember, it&rsquo;s not about the Robux, but the spirit of giving and community.
           </p>
         </div>
         <div className="flex gap-4">
-          <Link href="/about" className={buttonVariants()}>
+          <Link href="/about" className={buttonVariants({ size: "lg" })}>
             About Us
           </Link>
-          <Link href="#main" className={buttonVariants({ variant: "outline" })}>
+          <Link href="#main" className={buttonVariants({ variant: "outline", size: "lg" })}>
             Get Started
           </Link>
         </div>

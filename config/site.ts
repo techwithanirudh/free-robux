@@ -1,5 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
+import type { Route } from "next"
+
 export const siteConfig = {
   name: "Free Robux",
   productName: "Free Robux Tool",
@@ -14,9 +16,9 @@ export const siteConfig = {
       title: "About",
       href: "/about",
     },
-  ],
+  ] satisfies { title: string; href: Route }[],
   links: {
     twitter: "https://twitter.com/AnirudhWith",
-    github: "https://github.com/techwithanirudh"
+    github: "https://github.com/techwithanirudh",
   },
 }
